@@ -1,0 +1,16 @@
+{% extends "AppTemplates/base.html" %}
+
+{% load static %}  
+
+{% block ContenidoQueCambia %}
+    
+    <form action="{% url 'DetalleVenta' %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <button type="submit">Guardar</button>
+    </form>
+
+
+{% endblock %}

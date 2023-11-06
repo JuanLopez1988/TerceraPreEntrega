@@ -1,0 +1,26 @@
+
+{% extends "AppTemplates/base.html" %}
+
+{% load static %}  
+
+{% block ContenidoQueCambia %}
+    <p>Crear producto </p>
+    <form action="{% url 'Producto' %}" method="post"> 
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Enviar">
+        
+    </form>
+    {% block getProducto %} 
+    {% endblock %}
+{% endblock %}
+
+
+<!-- class Producto(models.Model):
+    nombre = models.CharField(max_length=40)
+    stock = models.FloatField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+    description = models.TextField()
+    createdAt = models.DateTimeField(default=timezone.now) -->

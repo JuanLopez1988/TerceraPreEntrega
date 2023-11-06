@@ -1,0 +1,35 @@
+{% extends "AppTemplates/base.html" %}
+
+{% load static %}  
+
+{% block ContenidoQueCambia %}
+    <style>
+        .venta-table {
+        border-collapse: separate;
+        border-spacing: 10px;
+        }
+    </style>
+    
+    <table class="venta-table">
+        <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Precio Final</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venta in ventas %}
+            <tr>
+            <td>{{ venta.producto.nombre }}</td>
+            <td>{{ venta.cantidad }}</td>
+            <td>{{ venta.precioUnitario }}</td>
+            <td>{{ venta.precioFinal }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  
+  
+{% endblock %}

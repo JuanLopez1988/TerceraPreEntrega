@@ -1,0 +1,18 @@
+{% extends "AppTemplates/base.html" %}
+
+{% load static %}  
+
+{% block ContenidoQueCambia %}
+    
+    <p>No olvides registrarte.</p>
+    <form action="/clientes/" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+    </form>
+
+
+{%endblock %}
+

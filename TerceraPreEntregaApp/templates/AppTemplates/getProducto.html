@@ -1,0 +1,12 @@
+
+{% extends "AppTemplates/base.html" %}
+{% load static %}  
+{% block ContenidoQueCambia %}
+    <h2>Lista de Productos ({{ productos|length }})</h2>
+    
+    
+    {% for producto in productos %}
+        <li>{{ producto.nombre }} - Stock: {{ producto.stock }} - Precio: {{ producto.price }} - Descripcion: {{producto.description}}</li>
+    {% endfor %}
+    
+{% endblock %}
